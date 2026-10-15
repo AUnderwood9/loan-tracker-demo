@@ -1,0 +1,36 @@
+{
+  "name": "loan-tracker-demo",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "test": "vitest run",
+    "typecheck": "next typegen && tsc --noEmit && tsc --noEmit -p cypress",
+    "seed": "node scripts/seed.mts",
+    "e2e:server": "next start -p 3100",
+    "test:e2e": "next build && DATA_CSV_PATH=cypress/.tmp/applications.csv start-server-and-test e2e:server http://localhost:3100 'cypress run'",
+    "cypress:open": "next build && DATA_CSV_PATH=cypress/.tmp/applications.csv start-server-and-test e2e:server http://localhost:3100 'cypress open'"
+  },
+  "dependencies": {
+    "next": "16.4.1",
+    "papaparse": "^5.7.0",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "server-only": "^0.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^24.19.2",
+    "@types/papaparse": "^5.5.2",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "cypress": "^16.2.0",
+    "eslint": "^9",
+    "eslint-config-next": "16.4.1",
+    "start-server-and-test": "^3.0.13",
+    "typescript": "^5",
+    "vitest": "^5.0.4"
+  }
+}
