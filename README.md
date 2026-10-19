@@ -27,7 +27,7 @@ The data lives in a CSV file, one row per document per application. The app read
 - An empty CSV shows "No open applications to display". An unreadable or malformed CSV (missing file, wrong header, bad row) shows "An error has occurred", and the cause is logged on the server.
 - Viewing never modifies the CSV.
 
-**Not in V1**: changing document statuses and adding applications. Both have draft analyses under `tickets/`, but they're on hold pending presentation refinements and clarification of some data points. See [Project documents](#project-documents).
+**Not in V1**: changing document statuses and adding applications. Both have draft analyses under `tickets/`, but they're on hold pending presentation refinements and clarification of some data points. The analyses for every feature are in `tickets/`.
 
 ## Requirements
 
@@ -41,9 +41,7 @@ The data lives in a CSV file, one row per document per application. The app read
    npm install
    ```
 
-2. Put the sample CSV at `docs/NEWITY_Sample_Data_A_Document_Checklist.csv`. It isn't checked into the repository; get it from the project owner.
-
-3. Seed the live data file. This copies the sample to `data/applications.csv`, which is gitignored, so edits to it never show up in git:
+2. Seed the live data file. This copies the sample in `docs/NEWITY_Sample_Data_A_Document_Checklist.csv` to `data/applications.csv`, which is gitignored, so edits to it never show up in git:
 
    ```bash
    npm run seed           # refuses to overwrite an existing data file
@@ -84,7 +82,7 @@ The app is built to run as a single long-lived Node server with a writable disk.
 | `npm run typecheck` | Next.js route types, then TypeScript for the app and the Cypress project |
 
 - **Test data:** the browser tests run against their own copy of the data at `cypress/.tmp/applications.csv`, which they reset before each test. They never touch `data/`.
-- **The sample CSV:** many unit and browser tests use it as their fixture, so a fresh clone needs it in `docs/` before the test suites pass.
+- **The sample CSV:** many unit and browser tests use `docs/NEWITY_Sample_Data_A_Document_Checklist.csv` as their fixture. Don't edit it; change `data/applications.csv` instead.
 
 ## Project layout
 
