@@ -32,11 +32,6 @@ The data lives in a CSV file, one row per document per application. The app read
 ## Requirements
 
 - Node.js 24 (developed on 24.14) and npm.
-- To run the browser tests on Linux or WSL, Cypress needs system libraries that minimal installs lack:
-
-  ```bash
-  sudo apt-get install libnss3 libasound2t64
-  ```
 
 ## Setup
 
@@ -106,11 +101,6 @@ docs/                       stakeholder brief, sample data, tech debt log
 
 This project uses Next.js 16 with Cache Components enabled. Its APIs differ from older versions; see `AGENTS.md` and the guides in `node_modules/next/dist/docs/` before changing framework code.
 
-## Project documents
-
-- `tickets/view-applications/`: the V1 analysis. The index (`view-applications.md`) holds the acceptance criteria; `research-notes.md` records every decision and why it was made.
-- `tickets/update-document-status/` and `tickets/add-application/`: draft analyses for features not in V1.
-- `docs/tech-debt.md`: known non-blocking issues, ranked by impact.
 
 ## Known limitations
 
